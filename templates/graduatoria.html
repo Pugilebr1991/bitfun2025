@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Graduatoria Commissioni - BitFun2025.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='bitfunlogo.png') }}" alt="BitFun.com Logo" class="logo">
+    <h1>BitFun2025.com</h1>
+    <h2>Graduatoria Commissioni</h2>
+    <h2>(commissione del 50% ogni mese su ogni utente referral)</h2>
+</header>
+
+<section class="info-box">
+    <p>
+        Non vuoi invitare utenti? Nessun problema! 🎉 <br><br>
+        Grazie al nostro sistema di <strong>graduatoria rotativa esclusiva</strong>, riceverai automaticamente 
+        nuovi iscritti provenienti dalle nostre <em>campagne pubblicitarie ufficiali</em> e otterrai comunque le loro 
+        <strong>commissioni in Bitcoin</strong>.  
+    </p>
+    <p>
+        🔹 La graduatoria reale e dettagliata è visibile <strong>solo</strong> agli <strong>utenti registrati</strong> su:
+        <a href="{{ url_for('graduatoriainfo') }}">📋 Graduatoria Reale</a>
+    </p>
+</section>
+<footer>
+    <p>Hai bisogno di aiuto? Contatta il nostro supporto: 
+        <a href="mailto:bitfuncentral@outlook.com">bitfuncentral@outlook.com</a>
+    </p>
+</footer>
+</body>
+</html>

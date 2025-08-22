@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Login / Registrazione - BitFun2025.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='bitfunlogo.png') }}" alt="BitFun.com Logo" class="logo">
+    <h1>BitFun2025.com</h1>
+    <h2>Accedi o Registrati</h2>
+</header>
+
+<div class="buttons">
+    <a href="#" id="btn-login" class="btn">🔑 Login</a>
+    <a href="#" id="btn-register" class="btn">📝 Registrati</a>
+</div>
+
+<!-- Form Login -->
+<div id="form-login" class="form-container" style="display:none;">
+    <form method="POST" action="{{ url_for('login') }}" class="form-box">
+        <label>Email</label>
+        <input type="email" name="email" required autocomplete="email">
+
+        <label>Password</label>
+        <input type="password" name="password" required autocomplete="current-password">
+
+        <button type="submit" class="btn">Accedi</button>
+    </form>
+    <p class="link">
+        Non hai un account?
+        <a href="#" id="btn-register-link">📝 Registrati</a>
+    </p>
+</div>
+
+<!-- Form Registrazione -->
+<div id="form-register" class="form-container" style="display:none;">
+    <form method="POST" action="{{ url_for('register') }}" class="form-box">
+        <label>Nome</label>
+        <input type="text" name="nome" required autocomplete="given-name">
+
+        <label>Cognome</label>
+        <input type="text" name="cognome" required autocomplete="family-name">
+
+        <label>Email</label>
+        <input type="email" name="email" required autocomplete="email">
+
+        <label>Password</label>
+        <input type="password" name="password" required autocomplete="new-password">
+
+        <label>Wallet Bitcoin</label>
+        <input type="text" name="wallet" placeholder="Inserisci solo indirizzo BTC (es. 1A1zP1...)" required>
+
+        <label>ID Referral (opzionale)</label>
+        <input type="text" name="referral" placeholder="ID utente del tuo referral">
+
+        <button type="submit" class="btn">Registrati</button>
+    </form>
+    <p class="info">
+        🔹 Dopo la registrazione, ti verrà richiesto il pagamento automatico di 
+        <strong>{{ SUBSCRIPTION_PRICE_BTC }} BTC</strong>.<br>
+        🔹 Se hai un referral, riceverà <strong>{{ REFERRAL_COMMISSION_BTC }} BTC</strong> come commissione.
+    </p>
+</div>
+
+<script>
+    const loginBtn = document.getElementById("btn-login");
+    const registerBtn = document.getElementById("btn-register");
+    const loginForm = document.getElementById("form-login");
+    const registerForm = document.getElementById("form-register");
+    const registerLink = document.getElementById("btn-register-link");
+
+    loginBtn.addEventListener("click", () => {
+        loginForm.style.display = "block";
+        registerForm.style.display = "none";
+    });
+
+    registerBtn.addEventListener("click", () => {
+        registerForm.style.display = "block";
+        loginForm.style.display = "none";
+    });
+
+    registerLink.addEventListener("click", () => {
+        registerForm.style.display = "block";
+        loginForm.style.display = "none";
+    });
+</script>
+<footer>
+    <p>Hai bisogno di aiuto? Contatta il nostro supporto: 
+        <a href="mailto:bitfuncentral@outlook.com">bitfuncentral@outlook.com</a>
+    </p>
+</footer>
+
+
+</body>
+</html>

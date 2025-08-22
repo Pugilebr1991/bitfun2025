@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagamento Bitcoin - BitFun2025.com</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        button { padding: 10px 20px; font-size: 16px; margin-top: 10px; cursor: pointer; }
+        header { margin-bottom: 30px; }
+        header img { max-width: 150px; display: block; margin: 0 auto; }
+        header h1 { margin: 10px 0 5px; font-size: 32px; color: #ff8c00; }
+        header h2 { margin: 10px 0 5px; font-size: 24px; color: #333; }
+        header h3 { margin: 5px 0 20px; font-size: 18px; color: #555; font-weight: normal; }
+        .pay-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background: linear-gradient(45deg, orange, black, gold);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .pay-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='bitfunlogo.png') }}" alt="BitFun.com Logo" class="logo">
+        <h1>BitFun2025.com</h1>
+        <h2>Abbonamento mensile</h2>
+        <h3>Pagamento Bitcoin</h3>
+    </header>
+
+    <h2>Pagamento da effettuare: {{ bitcoin_amount }} BTC</h2>
+    
+    <!-- Pulsante Paga Qui -->
+    <a class="pay-btn" href="bitcoin:{{ bitcoin_address }}?amount={{ bitcoin_amount }}">Paga qui</a>
+
+    <!-- QR Code per pagamento -->
+    <div class="qr-code">
+        <img src="{{ url_for('static', filename='qrcode.png') }}" alt="QR Code Bitcoin" width="200" height="200">
+        <p>Scansiona il QR Code per pagare direttamente dal tuo wallet</p>
+    </div>
+
+    <p><a href="{{ url_for('dashboard') }}">← Torna alla Dashboard</a></p>
+<footer>
+    <p>Hai bisogno di aiuto? Contatta il nostro supporto: 
+        <a href="mailto:bitfuncentral@outlook.com">bitfuncentral@outlook.com</a>
+    </p>
+</footer>
+
+</body>
+</html>

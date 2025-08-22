@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>BitFun2025.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='bitfunlogo.png') }}" alt="BitFun.com Logo" class="logo">
+    <h1>BitFun2025.com</h1>
+    <h2>Inizia ad accumulare Bitcoin direttamente sul tuo Wallet personale!</h2>
+         <nav class="buttons">
+             <a href="{{ url_for('login') }}" class="btn">🔑 Login</a>
+             <a href="{{ url_for('register') }}" class="btn">📝 Registrati</a>
+        </nav>     
+</header>
+
+<main>
+    <!-- Menu principale -->
+    <nav class="buttons">
+        <a href="{{ url_for('referral_info') }}" class="btn">Ottieni Referral Link</a>
+        <a href="{{ url_for('obiettivi') }}" class="btn">🎯 Obiettivi</a>
+        <a href="{{ url_for('graduatoria') }}" class="btn">📊 Graduatoria Commissioni</a>
+    </nav>
+
+    <!-- Wallet compatibili -->
+    <section class="wallets">
+        <h2>Wallet compatibili per pagamenti Bitcoin</h2>
+        <ul>
+            <li>
+                <img src="{{ url_for('static', filename='coinbaselogo.png') }}" alt="Coinbase Logo" class="wallet-logo">
+                <strong>Coinbase</strong> ✅ 
+                (Wallet consigliato)
+            </li>
+            
+            <li>
+                <img src="{{ url_for('static', filename='exoduslogo.png') }}" alt="Exodus Logo" class="wallet-logo">
+                <strong>Exodus</strong> ✅
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='trustwalletlogo.png') }}" alt="Trust Wallet Logo" class="wallet-logo">
+                <strong>Trust Wallet</strong> ✅
+            </li>
+            <li>
+                <img src="{{ url_for('static', filename='electrumlogo.png') }}" alt="Electrum Logo" class="wallet-logo">
+                <strong>Electrum</strong> ✅
+            </li>
+          
+    </ul>
+        <p>
+            <strong>Assicurati</strong> di avere uno di questi wallet per pagare in Bitcoin. 
+        </p>
+        <a href="{{ url_for('wallets') }}" class="btn" style="margin-top:10px;">📋 Vedi tutti i wallet compatibili</a>
+    </section>
+</main>
+   <footer>
+    <p>Hai bisogno di aiuto? Contatta il nostro supporto: 
+        <a href="mailto:bitfuncentral@outlook.com">bitfuncentral@outlook.com</a>
+    </p>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Graduatoria Reale - BitFun2025.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='bitfunlogo.png') }}" alt="BitFun.com Logo" class="logo">
+    <h1>BitFun2025.com</h1>
+    <h2>Graduatoria Reale</h2>
+</header>
+
+<section class="table-container">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Posizione</th>
+                <th>Nome</th>
+                <th>Wallet Bitcoin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in graduatoria %}
+            <tr>
+                <td data-label="Posizione">{{ user.graduatoria_pos }}</td>
+                <td data-label="Nome">{{ user.nome }}</td>
+                <td data-label="Wallet Bitcoin">{{ user.wallet }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<footer>
+    <p>Hai bisogno di aiuto? Contatta il nostro supporto: 
+        <a href="mailto:bitfuncentral@outlook.com">bitfuncentral@outlook.com</a>
+    </p>
+</footer>
+
+
+</body>
+</html>

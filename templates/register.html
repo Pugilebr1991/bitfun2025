@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrazione - BitFun2025.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Assicuriamoci che il testo info sia leggibile */
+        .info {
+            color: #333; /* Colore scuro leggibile su sfondo chiaro */
+            font-size: 14px;
+            margin-top: 15px;
+            line-height: 1.5;
+            text-align: left;
+        }
+        .info strong {
+            color: #ff8c00; /* Evidenzia gli importi in arancione */
+        }
+
+        /* ===== Bordo arancione per la colonna grande ===== */
+        .form-container {
+            border: 3px solid #ff8c00; /* bordo arancione spesso */
+            border-radius: 12px;       /* angoli arrotondati */
+            padding: 20px;             /* spazio interno */
+            background-color: white;   /* mantiene lo sfondo bianco */
+        }
+
+        /* Facoltativo: anche il form interno può avere un bordo leggero arancione */
+        .form-box {
+            border: 2px solid #ff8c00;
+            border-radius: 10px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='bitfunlogo.png') }}" alt="BitFun.com Logo" class="logo">
+    <h1>BitFun2025.com</h1>
+    <h2>Registrazione</h2>
+</header>
+
+<section class="form-container">
+    <form method="POST" class="form-box">
+        <label>Nome</label>
+        <input type="text" name="nome" required autocomplete="given-name">
+
+        <label>Cognome</label>
+        <input type="text" name="cognome" required autocomplete="family-name">
+
+        <label>Email</label>
+        <input type="email" name="email" required autocomplete="email">
+
+        <label>Password</label>
+        <input type="password" name="password" required autocomplete="new-password">
+
+        <label>Wallet Bitcoin</label>
+        <input type="text" name="wallet" placeholder="Inserisci solo indirizzo BTC (es. 1A1zP1...)" required autocomplete="off">
+
+        <label>Referral (opzionale)</label>
+        <input type="text" name="referral" placeholder="ID utente del tuo referral" autocomplete="off">
+
+        <button type="submit" class="btn">📝 Registrati</button>
+    </form>
+
+    <p class="link">
+        Hai già un account?
+        <a href="{{ url_for('login') }}">🔑 Vai al Login</a>
+    </p>
+
+    <p class="info">
+        🔹 Dopo la registrazione, ti verrà richiesto il pagamento automatico di 
+        <strong>0.002 BTC</strong>.<br>
+        🔹 Se hai un referral, riceverà <strong>0.001 BTC</strong> come commissione.<br>
+        🔹 <strong>Abbonamento mensile!</strong><br>
+    </p>
+</section>
+<footer>
+    <p>Hai bisogno di aiuto? Contatta il nostro supporto: 
+        <a href="mailto:bitfuncentral@outlook.com">bitfuncentral@outlook.com</a>
+    </p>
+</footer>
+
+</body>
+</html>
